@@ -1,4 +1,4 @@
-#Salary Calculator App
+Salary Calculator App
 
 ##Technologies 
 
