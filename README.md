@@ -1,7 +1,7 @@
 #Salary Calculator App
 
 ##Technologies 
-Project with NextJS,Typescript,Styled Components and Redux-toolkit
+NextJS,Typescript,Styled Components and Redux-toolkit
 
 ##How to Run the project
 Clone the Repository.
