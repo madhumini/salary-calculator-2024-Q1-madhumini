@@ -152,26 +152,26 @@ const Details: React.FC = () => {
         <Subtitle>Amount</Subtitle>
       </SubtitleContainer>
       <DetailsContainer>
-        <Span>Basic Salary: </Span>
+        <Span>Basic Salary </Span>
         <Span>{details.basicSalary ? details.basicSalary : 0}</Span>
       </DetailsContainer>
       <DetailsContainer>
-        <Span>Gross Earnings: </Span>
+        <Span>Gross Earnings </Span>
         <Span>{details.grossEarnings ? details.grossEarnings : 0}</Span>
       </DetailsContainer>
       <DetailsContainer>
         <Span>
-          Gross Deductions:{" "}
-          {details.grossDeduction ? details.grossDeduction : 0}
+          Gross Deductions</Span><Span>
+         -{details.grossDeduction ? details.grossDeduction : 0}
         </Span>
       </DetailsContainer>
       <DetailsContainer>
-        <Span>Employee EPF (8%): </Span>
-        <Span>{details.employeeEPF ? details.employeeEPF : 0}</Span>
+        <Span>Employee EPF (8%) </Span>
+        <Span>-{details.employeeEPF ? details.employeeEPF : 0}</Span>
       </DetailsContainer>
       <DetailsContainer>
-        <Span>APIT: </Span>
-        <Span>{details.APIT ? details.APIT : 0}</Span>
+        <Span>APIT </Span>
+        <Span>-{details.APIT ? details.APIT : 0}</Span>
       </DetailsContainer>
       <NetSalaryContainer>
         <NetSalarySpan>Net Salary (Take Home)</NetSalarySpan>
@@ -181,16 +181,16 @@ const Details: React.FC = () => {
       </NetSalaryContainer>
       <Subtitle>Contribution from the Employer</Subtitle>
       <DetailsContainer>
-        <Span>Employer EPF (12%): </Span>
+        <Span>Employer EPF (12%) </Span>
         <Span>{details.employerEPF ? details.employerEPF : 0}</Span>
       </DetailsContainer>
       <DetailsContainer>
-        <Span>Employer ETF (3%): </Span>
+        <Span>Employer ETF (3%) </Span>
         <Span>{details.employerETF ? details.employerETF : 0}</Span>
       </DetailsContainer>
       <DetailsContainer>
         <LastSpan>
-          CTC (Cost to Company): </LastSpan><LastSpan>
+          CTC (Cost to Company) </LastSpan><LastSpan>
           {details.CTC ? details.CTC : 0}
         </LastSpan>
       </DetailsContainer>

@@ -309,7 +309,7 @@ const Form: React.FC = () => {
       </ResetButton>
       <Title>Calculate Your Salary</Title>
       <BasicSalaryLabel>
-        <SubTitle>Basic Salary:</SubTitle>
+        <SubTitle>Basic Salary</SubTitle>
         <Input
           placeholder="Basic Salary"
           type="number"
