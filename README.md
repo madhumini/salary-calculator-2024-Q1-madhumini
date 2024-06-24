@@ -1,16 +1,16 @@
 Salary Calculator App
 
-##Technologies 
+Technologies -
 
 NextJS,Typescript,Styled Components and Redux-toolkit
 
-##How to Run the project
+How to Run the project -
 
 Clone the Repository.
 
 Open it with VSCode.
 
-Type Following commands on the terminal
+Type Following commands on the terminal -
 
    to install node modules run this command - npm install
    
