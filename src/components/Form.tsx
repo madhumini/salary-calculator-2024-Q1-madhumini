@@ -87,14 +87,7 @@ const Span = styled.span`
   line-height: 20px;
   ${mobile({ lineHeight: "10px", fontSize: "12px" })};
 `;
-const AddToCalculationSpan = styled.span`
-  font-size: 14px;
-  font-weight: 500;
-  color: #0052ea;
-  margin: 4px;
-  line-height: 20px;
-  ${mobile({ lineHeight: "10px", fontSize: "12px" })};
-`;
+
 const SmallSpan = styled.span`
   font-size: 12px;
   font-weight: 400;
@@ -226,27 +219,13 @@ const Form: React.FC = () => {
     field: keyof Earning,
     value: string | number | boolean
   ) => {
-    if (earningSpanRefs.current[index]!.innerHTML === "Added to calculation") {
-      earningSpanRefs.current[index]!.innerHTML = "Add to calculation";
-      earningButtonRefs.current[index]!.classList.remove("disabled");
-    }
+   
     const newEarnings = earnings.slice();
     const parsedValue =
       field === "amount" ? parseFloat(value as string) : value;
     newEarnings[index] = { ...newEarnings[index], [field]: parsedValue };
     setEarnings(newEarnings);
-  };
-
-  const handleAddEarningToCalculation = (index: number) => {
-    const newEarnings = [...earnings];
     dispatch(addEarning({ index, earning: newEarnings[index] }));
-
-    if (earningSpanRefs.current[index]) {
-      earningSpanRefs.current[index]!.innerHTML = "Added to calculation";
-    }
-    if (earningButtonRefs.current[index]) {
-      earningButtonRefs.current[index]!.classList.add("disabled");
-    }
   };
 
   const handleDeductionChange = (
@@ -254,29 +233,13 @@ const Form: React.FC = () => {
     field: keyof Deduction,
     value: string | number
   ) => {
-    if (
-      deductionSpanRefs.current[index]!.innerHTML === "Added to calculation"
-    ) {
-      deductionSpanRefs.current[index]!.innerHTML = "Add to calculation";
-      deductionButtonRefs.current[index]!.classList.remove("disabled");
-    }
+ 
     const newDeductions = [...deductions];
     const parsedValue =
       field === "amount" ? parseFloat(value as string) : value;
     newDeductions[index] = { ...newDeductions[index], [field]: parsedValue };
     setDeductions(newDeductions);
-  };
-
-  const handleAddDeductionToCalculation = (index: number) => {
-    const newDeductions = [...deductions];
     dispatch(addDeduction({ index, deduction: newDeductions[index] }));
-
-    if (deductionSpanRefs.current[index]) {
-      deductionSpanRefs.current[index]!.innerHTML = "Added to calculation";
-    }
-    if (deductionButtonRefs.current[index]) {
-      deductionButtonRefs.current[index]!.classList.add("disabled");
-    }
   };
 
   const handleReset = () => {
@@ -355,18 +318,6 @@ const Form: React.FC = () => {
               <CheckboxSpan>EPF/ETF</CheckboxSpan>
             </Label>
           </CheckboxGroup>
-          <Button
-            onClick={() => handleAddEarningToCalculation(index)}
-            ref={(el) => (earningButtonRefs.current[index] = el)}
-          >
-            <Image src="/AddIcon.png" width={24} height={24} alt="Add Icon" />
-
-            <AddToCalculationSpan
-              ref={(el) => (earningSpanRefs.current[index] = el)}
-            >
-              Add To Calculation
-            </AddToCalculationSpan>
-          </Button>
         </InputGroup>
       ))}
       <Button onClick={handleAddEarning}>
@@ -403,18 +354,6 @@ const Form: React.FC = () => {
               alt="Remove Icon"
             />
           </RemoveButton>
-          <Button
-            onClick={() => handleAddDeductionToCalculation(index)}
-            ref={(el) => (deductionButtonRefs.current[index] = el)}
-          >
-            <Image src="/AddIcon.png" width={24} height={24} alt="Add Icon" />
-
-            <AddToCalculationSpan
-              ref={(el) => (deductionSpanRefs.current[index] = el)}
-            >
-              Add To Calculation
-            </AddToCalculationSpan>
-          </Button>
         </InputGroup>
       ))}
       <Button onClick={handleAddDeduction}>

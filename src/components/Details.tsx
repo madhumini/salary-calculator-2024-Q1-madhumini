@@ -105,7 +105,7 @@ const Details: React.FC = () => {
     const employeeEPF = grossSalaryForEPF * 0.08;
     const employerEPF = grossSalaryForEPF * 0.12;
     const employerETF = grossSalaryForEPF * 0.03;
-    const consent = 25500;
+    const consent = 0;
     const taxPercentage =
       grossEarnings <= 100000
         ? 0
